@@ -12,7 +12,7 @@ public class MainController {
         viewModel.addAttribute("number", 2);
         viewModel.addAttribute("sleepTime", 8);
         viewModel.addAttribute("play", false);
-        viewModel.addAttribute("walkTime", 3);
+        viewModel.addAttribute("walkTime", 2);
 //        viewModel.addAttribute("attributeKey", "attributeValue");
 //        attributeKey may be any meaningful name but need to match with what declared in HTML
 //        attributeValue may be an object such as an instance of Entity/Model class

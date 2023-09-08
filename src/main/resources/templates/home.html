@@ -21,10 +21,18 @@
     <p>Has a chance to play today ? <span th:text="${play} ? 'YES' : 'NO'"></span></p>
 
     <!-- switch operator -->
+<!--    <p th:switch="${walkTime}">Walking times to day :-->
+<!--        <span th:case="'1'" th:text="${walkTime}"> time is not enough</span>-->
+<!--        <span th:case="'2'" th:text="${walkTime}"> is good</span>-->
+<!--        <span th:case="'3'" th:text="${walkTime}"> is too much</span>-->
+<!--    </p>-->
+    
+    <!-- switch operator with none fixed value -->
     <p th:switch="${walkTime}">Walking times to day :
-        <span th:case="'1'">1 time is not enough</span>
-        <span th:case="2">2 is good</span>
-        <span th:case="'3'">3 is too much</span>
+        <span th:if="${walkTime < 2}" th:text="${walkTime} + ' time is not enough'"></span>
+        <span th:if="${walkTime >= 2 and walkTime < 4}" th:text="${walkTime} + ' is good'"></span>
+        <span th:if="${walkTime >= 4}" th:text="${walkTime} + ' is too much'"></span>
     </p>
+
 </body>
 </html>
