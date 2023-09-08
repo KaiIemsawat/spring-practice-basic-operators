@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <!-- To use a path, we need '@' in the syntax as below -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <h1>Home Page Here</h1>
+    <p>This page is made by <span th:text="${userName}"></span></p>
+    <p>The favorite number is  <span th:text="${number}"></span></p>
+
+    <!-- if / else condition in thymeleaf -->
+    <p>Zukkii is
+        <span th:if="${sleepTime >= 10}">happy</span>
+        <span th:unless="${sleepTime >= 10}">sleepy</span>
+    </p>
+
+    <!-- ternary operator -->
+    <p>Has a chance to play today ? <span th:text="${play} ? 'YES' : 'NO'"></span></p>
+
+    <!-- switch operator -->
+    <p th:switch="${walkTime}">Walking times to day :
+        <span th:case="'1'">1 time is not enough</span>
+        <span th:case="2">2 is good</span>
+        <span th:case="'3'">3 is too much</span>
+    </p>
+</body>
+</html>
